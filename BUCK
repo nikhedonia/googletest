@@ -1,5 +1,7 @@
+include_defs('//BUCKAROO_DEPS')
+
 cxx_library(
-  name = 'googletest',
+  name = 'gtest',
   header_namespace = '',
   srcs = [
     'googletest/src/gtest-all.cc',
@@ -19,7 +21,7 @@ cxx_library(
     '-U_STRICT_ANSI_',
   ],
   compiler_flags = [
-    '-std=c++14', 
+    '-std=c++14',
   ],
   visibility = [
     'PUBLIC',
@@ -27,7 +29,7 @@ cxx_library(
 )
 
 cxx_library(
-  name = 'googlemock',
+  name = 'gmock',
   header_namespace = '',
   srcs = [
     'googlemock/src/gmock-all.cc',
@@ -47,11 +49,9 @@ cxx_library(
     '-U_STRICT_ANSI_',
   ],
   compiler_flags = [
-    '-std=c++14', 
+    '-std=c++14',
   ],
-  deps = [
-    ':googletest',
-  ],
+  deps = BUCKAROO_DEPS,
   visibility = [
     'PUBLIC',
   ],
