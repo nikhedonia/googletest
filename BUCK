@@ -23,6 +23,9 @@ cxx_library(
   compiler_flags = [
     '-std=c++14',
   ],
+  exported_platform_linker_flags = [
+    '-lpthread'
+  ],
   visibility = [
     'PUBLIC',
   ],
