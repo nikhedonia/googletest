@@ -24,7 +24,9 @@ cxx_library(
     '-std=c++14',
   ],
   exported_platform_linker_flags = [
-    '-lpthread'
+    ('default', []),
+    ('^macos.*', []),
+    ('^linux.*', ['-lpthread'])
   ],
   visibility = [
     'PUBLIC',
